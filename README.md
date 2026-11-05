@@ -1,5 +1,5 @@
 # 🏛 E-MUROJAAT
-## PEDAGOGIKA FAKULTETI UCHUN PROFESSIONAL ELEKTRON MUROJAATLAR TELEGRAM BOTI
+## GUMANITAR FANLAR VA JISMONIY MADANIYAT FAKULTETI UCHUN PROFESSIONAL ELEKTRON MUROJAATLAR TELEGRAM BOTI
 
 Professional, xavfsiz va to‘liq avtomatlashtirilgan elektron murojaatlar axborot tizimi. Ushbu tizim faqatgina **Telegram Bot** ichida ishlaydi — hech qanday tashqi veb dashboard yoki alohida sayt talab etilmaydi. Fakultet dekani va barcha mas'ul administratorlar o‘z vakolatlari doirasida barcha jarayonlarni Telegram bot orqali to‘liq boshqaradilar.
 
@@ -11,7 +11,7 @@ Professional, xavfsiz va to‘liq avtomatlashtirilgan elektron murojaatlar axbor
    - Web kabinet, dashboard yoki uchinchi tomon dasturlariga ehtiyoj yo‘q.
    - Foydalanuvchilar va dekanat o‘rtasidagi barcha operatsiyalar (qabul qilish, biriktirish, javob yuborish, statistika) 100% Telegram ichida amalga oshiriladi.
 2. **Noyob Murojaat Raqamlash Tizimi**:
-   - Har bir murojaatga takrorlanmas `PF-2026-000001` formatidagi raqam avtomatik biriktiriladi (`PF` — Pedagogika fakulteti, joriy yil va 6 xonali ketma-ketlik).
+   - Har bir murojaatga takrorlanmas `GF-2026-000001` formatidagi raqam avtomatik biriktiriladi (`GF` — Gumanitar fanlar va jismoniy madaniyat fakulteti, joriy yil va 6 xonali ketma-ketlik).
    - Race-condition va dublikatlardan tranzaksion darajada himoyalangan.
 3. **Bosqichma-bosqich FSM Murojaat Yuborish**:
    - 7 bosqichli qat'iy nazorat: Murojaat turi ➡️ Fakultet yo‘nalishi ➡️ Mavzu ➡️ Mazmuni ➡️ Fayllar (PDF, DOCX, JPG va boshqalar) ➡️ Maxfiylik ➡️ Yakuniy tasdiqlash.
@@ -198,7 +198,7 @@ Eng ishonchli va tavsiya etiladigan usul. Birgina buyruq bilan PostgreSQL 16, Re
 3. Quyidagi konfiguratsiyani kiriting:
    ```ini
    [Unit]
-   Description=E-Murojaat Telegram Bot (Pedagogika fakulteti)
+   Description=E-Murojaat Telegram Bot (Gumanitar fanlar va jismoniy madaniyat fakulteti)
    After=network.target
 
    [Service]
@@ -227,7 +227,7 @@ Eng ishonchli va tavsiya etiladigan usul. Birgina buyruq bilan PostgreSQL 16, Re
 
 #### 👤 Foydalanuvchilar uchun:
 1. **/start**: Botni ishga tushiradi. Birinchi kirishda toifa tanlanadi (Talaba, Fuqaro, Ota-ona, Xodim, Boshqa), kerakli maydonlar to‘ldiriladi va qonuniy maxfiylik roziligi beriladi.
-2. **📝 Murojaat yuborish**: Murojaat turi, yo‘nalishi, mavzusi, batafsil mazmuni, fayllar va maxfiylik turi tanlanadi. Yakuniy tekshiruvdan so‘ng yuboriladi va unga `PF-2026-XXXXXX` raqami beriladi.
+2. **📝 Murojaat yuborish**: Murojaat turi, yo‘nalishi, mavzusi, batafsil mazmuni, fayllar va maxfiylik turi tanlanadi. Yakuniy tekshiruvdan so‘ng yuboriladi va unga `GF-2026-XXXXXX` raqami beriladi.
 3. **📂 Mening murojaatlarim**: O‘zining barcha murojaatlari, ularning holatlari va javoblarini ko‘rish.
 4. **🔎 Murojaat holatini tekshirish**: Murojaat raqami orqali tezkor tekshirish.
 5. **💬 Dekanat bilan yozishmalar**: Murojaat bo‘yicha dekanatga qo‘shimcha ma'lumot yoki fayl yuborish.
@@ -276,5 +276,5 @@ Buning oldini olish uchun bot tarkibiga maxsus **asinxron Keep-Alive HTTP veb-se
 - SQL Injection, fayl kengaytmasi va hajmi cheklovlari to‘liq joriy etilgan.
 
 ---
-**E-MUROJAAT** — Pedagogika fakultetining ishonchli, shaffof va zamonaviy elektron ko‘prigi!
+**E-MUROJAAT** — Gumanitar fanlar va jismoniy madaniyat fakultetining ishonchli, shaffof va zamonaviy elektron ko‘prigi!
 

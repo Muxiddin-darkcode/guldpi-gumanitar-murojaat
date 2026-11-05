@@ -43,13 +43,13 @@ async def run_tests():
     async with TestSessionLocal() as session:
         # Seed settings
         default_settings = {
-            "dekan_name": "Norqulov Shovkat Turg'unboyevich",
+            "dekan_name": "Komilov Jamoliddin Karimjonovich",
             "institute_name": "Guliston davlat pedagogika instituti",
-            "department_name": "Pedagogika fakulteti",
-            "contact_phone": "+998 99 460-05-20",
-            "contact_email": "norqulovshavkat78@gmail.com",
+            "department_name": "Gumanitar fanlar va jismoniy madaniyat fakulteti",
+            "contact_phone": "+998 67 225-10-20",
+            "contact_email": "komilov.jamoliddin@guldpi.uz",
             "reception_hours": "Har kun: 09:00-17:00",
-            "official_telegram": "@pedagogika_fakulteti",
+            "official_telegram": "@gumanitar_fakulteti",
             "default_deadline_days": "10",
             "min_content_length": "20",
             "max_content_length": "3000",
@@ -87,11 +87,11 @@ async def run_tests():
         citizen.is_registered = True
 
         # Staff (Dekan)
-        dekan = await get_or_create_user(session, tg_id=333333, full_name="Norqulov Shovkat Turg'unboyevich")
+        dekan = await get_or_create_user(session, tg_id=333333, full_name="Komilov Jamoliddin Karimjonovich")
         dekan.role = UserRole.DEKAN.value
         dekan.user_type = UserType.XODIM.value
-        dekan.staff_position = "Pedagogika fakulteti dekani"
-        dekan.phone = "+998994600520"
+        dekan.staff_position = "Gumanitar fanlar va jismoniy madaniyat fakulteti dekani"
+        dekan.phone = "+998672251020"
         dekan.is_registered = True
 
         # Staff (O'qituvchi / Mas'ul xodim)
@@ -108,7 +108,7 @@ async def run_tests():
         # 3. Test Appeal Number Generation & Submission
         print("\n[3] Murojaat raqamini avtomatik yaratish va saqlash...")
         app_num1 = await generate_appeal_number(session)
-        assert app_num1.startswith(f"PF-{datetime.now().year}-"), f"Noto'g'ri format: {app_num1}"
+        assert app_num1.startswith(f"GF-{datetime.now().year}-"), f"Noto'g'ri format: {app_num1}"
         assert app_num1.endswith("000001"), f"Birinchi raqam 000001 bo'lishi kerak: {app_num1}"
 
         appeal1 = Appeal(

@@ -42,7 +42,7 @@ async def generate_appeals_excel_report(session: AsyncSession) -> str:
     ws_list.title = "Murojaatlar ro'yxati"
 
     # Title block
-    ws_list["A1"] = "PEDAGOGIKA FAKULTETI - ELEKTRON MUROJAATLAR HISOBOTI"
+    ws_list["A1"] = "GUMANITAR FANLAR VA JISMONIY MADANIYAT FAKULTETI - ELEKTRON MUROJAATLAR HISOBOTI"
     ws_list["A1"].font = title_font
     ws_list["A2"] = f"Shakllantirilgan sana: {format_datetime(datetime.now(timezone.utc))}"
     ws_list["A2"].font = regular_font

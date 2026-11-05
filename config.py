@@ -1,6 +1,6 @@
 import os
-from typing import List, Optional
-from pydantic import Field
+from typing import List, Optional, Any
+from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     APP_ENV: str = Field(default="production", description="Application environment: development / production")
     LOG_LEVEL: str = Field(default="INFO", description="Log level")
     MAX_FILE_SIZE_MB: int = Field(default=20, description="Max allowed file size in MB")
-    APPEAL_PREFIX: str = Field(default="PF", description="Appeal number prefix (PF for Pedagogika fakulteti)")
+    APPEAL_PREFIX: str = Field(default="GF", description="Appeal number prefix (GF for Gumanitar fanlar va jismoniy madaniyat fakulteti)")
     ALLOWED_EXTENSIONS: List[str] = Field(
         default=[".pdf", ".doc", ".docx", ".jpg", ".jpeg", ".png", ".mp4", ".xlsx", ".zip", ".txt"],
         description="Allowed file extensions"
@@ -29,6 +29,13 @@ class Settings(BaseSettings):
     WEB_PORT: int = Field(default=8080, description="Web port for health checks and UptimeRobot")
     SELF_PING_URL: Optional[str] = Field(default=None, description="Optional public URL to self-ping")
     SELF_PING_INTERVAL_MINUTES: int = Field(default=10, description="Self-ping interval in minutes")
+
+    @field_validator("SUPER_ADMIN_ID", "DEKAN_ID", mode="before")
+    @classmethod
+    def parse_optional_int(cls, v: Any) -> int:
+        if v is None or v == "":
+            return 0
+        return int(v)
 
     model_config = SettingsConfigDict(
         env_file=".env",

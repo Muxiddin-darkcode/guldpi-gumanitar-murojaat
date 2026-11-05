@@ -349,7 +349,7 @@ async def submit_appeal_final(callback: CallbackQuery, state: FSMContext, sessio
     success_text = (
         "✅ <b>Murojaatingiz muvaffaqiyatli qabul qilindi!</b>\n\n"
         f"<b>Murojaat raqami:</b> <code>{appeal_number}</code>\n\n"
-        "Murojaatingiz Pedagogika fakulteti mas'ullariga yetkazildi.\n\n"
+        "Murojaatingiz Gumanitar fanlar va jismoniy madaniyat fakulteti mas'ullariga yetkazildi.\n\n"
         "Murojaatingiz holatini bot orqali istalgan vaqtda kuzatishingiz mumkin.\n\n"
         "Murojaatingiz uchun rahmat!"
     )

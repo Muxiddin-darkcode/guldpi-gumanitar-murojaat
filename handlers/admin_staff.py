@@ -205,7 +205,7 @@ async def add_staff_step6_finish(message: Message, state: FSMContext, session: A
                 chat_id=tg_id,
                 text=(
                     f"🎉 <b>Hurmatli {full_name}!</b>\n\n"
-                    f"Sizga <b>Pedagogika fakulteti</b> elektron murojaatlar axborot tizimida xodimlik vakolati berildi:\n"
+                    f"Sizga <b>Gumanitar fanlar va jismoniy madaniyat fakulteti</b> elektron murojaatlar axborot tizimida xodimlik vakolati berildi:\n"
                     f"• <b>Rol:</b> {UserRole.label(role)}\n"
                     f"• <b>Lavozim:</b> {position}\n\n"
                     f"Tizimga kirish uchun /start yoki /admin buyrug‘ini bosing."
