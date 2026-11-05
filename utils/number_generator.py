@@ -32,5 +32,5 @@ async def generate_appeal_number(session: AsyncSession) -> str:
         current_num = seq.current_number
 
     # Do not commit here, it commits with the appeal creation
-    return f"AF-{current_year}-{current_num:06d}"
+    return f"{settings.APPEAL_PREFIX}-{current_year}-{current_num:06d}"
 

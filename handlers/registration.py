@@ -286,7 +286,7 @@ async def process_consent_agree(callback: CallbackQuery, state: FSMContext, sess
     await callback.message.delete()
     await callback.message.answer(
         f"✅ <b>Ro‘yxatdan o‘tish muvaffaqiyatli yakunlandi!</b>\n\n"
-        f"Hurmatli <b>{user.full_name}</b>, endi Siz Aniq va tabiiy fanlar fakultetiga ariza, taklif va savollaringizni to‘g‘ridan-to‘g‘ri yuborishingiz mumkin.",
+        f"Hurmatli <b>{user.full_name}</b>, endi Siz Pedagogika fakultetiga ariza, taklif va savollaringizni to‘g‘ridan-to‘g‘ri yuborishingiz mumkin.",
         reply_markup=get_main_menu_keyboard(is_staff=is_staff),
         parse_mode="HTML"
     )

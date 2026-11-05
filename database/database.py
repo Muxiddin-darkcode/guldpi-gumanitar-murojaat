@@ -64,13 +64,13 @@ async def init_db() -> None:
 
             # 2. Seed System Settings
             default_settings = {
-                "dekan_name": "Baxtiyor Abdullaev",
+                "dekan_name": "Norqulov Shovkat Turg'unboyevich",
                 "institute_name": "Guliston davlat pedagogika instituti",
-                "department_name": "Aniq va tabiiy fanlar fakulteti",
-                "contact_phone": "+998 97 277-21-78",
-                "contact_email": "baxtiyor.abdullaev.78@mail.ru",
+                "department_name": "Pedagogika fakulteti",
+                "contact_phone": "+998 99 460-05-20",
+                "contact_email": "norqulovshavkat78@gmail.com",
                 "reception_hours": "Har kun: 09:00-17:00",
-                "official_telegram": "@aniq_fanlar_kafedrasi",
+                "official_telegram": "@pedagogika_fakulteti",
                 "default_deadline_days": "10",
                 "min_content_length": "20",
                 "max_content_length": "3000",
@@ -117,11 +117,11 @@ async def init_db() -> None:
                 if not dekan_user:
                     dekan_user = User(
                         telegram_id=settings.DEKAN_ID,
-                        full_name="Baxtiyor Abdullaev",
-                        phone="+998972772178",
+                        full_name="Norqulov Shovkat Turg'unboyevich",
+                        phone="+998994600520",
                         user_type="XODIM",
                         role=UserRole.DEKAN.value,
-                        staff_position="Aniq va Tabiiy fanlar fakulteti dekani",
+                        staff_position="Pedagogika fakulteti dekani",
                         is_active=True,
                         is_registered=True
                     )
@@ -129,9 +129,9 @@ async def init_db() -> None:
                     logger.info(f"Created Dekan with Telegram ID: {settings.DEKAN_ID}")
                 else:
                     dekan_user.role = UserRole.DEKAN.value
-                    dekan_user.staff_position = "Aniq va Tabiiy fanlar fakulteti dekani"
-                    dekan_user.full_name = "Baxtiyor Abdullaev"
-                    dekan_user.phone = "+998972772178"
+                    dekan_user.staff_position = "Pedagogika fakulteti dekani"
+                    dekan_user.full_name = "Norqulov Shovkat Turg'unboyevich"
+                    dekan_user.phone = "+998994600520"
                     logger.info(f"Upgraded user {settings.DEKAN_ID} to Dekan role.")
 
             await session.commit()

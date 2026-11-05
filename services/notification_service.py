@@ -146,7 +146,7 @@ async def notify_official_response(
         return
 
     text = (
-        f"🏛 <b>ANIQ VA TABIIY FANLAR FAKULTETIDAN RASMIY JAVOB</b>\n\n"
+        f"🏛 <b>PEDAGOGIKA FAKULTETIDAN RASMIY JAVOB</b>\n\n"
         f"<b>Murojaat raqami:</b> <code>{appeal.appeal_number}</code>\n"
         f"<b>Mavzu:</b> {appeal.title}\n\n"
         f"<b>Rasmiy javob matni:</b>\n"

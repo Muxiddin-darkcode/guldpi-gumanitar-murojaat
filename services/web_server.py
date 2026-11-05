@@ -78,7 +78,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
   <div class="card">
     <div class="badge">● TIZIM ISHLAMOQDA</div>
     <h1>E-MUROJAAT</h1>
-    <p>Aniq va tabiiy fanlar fakulteti murojaatlar boti xizmati uzluksiz faol holatda.</p>
+    <p>Pedagogika fakulteti murojaatlar boti xizmati uzluksiz faol holatda.</p>
     <div class="status-box">
       UptimeRobot Keep-Alive: 200 OK
     </div>

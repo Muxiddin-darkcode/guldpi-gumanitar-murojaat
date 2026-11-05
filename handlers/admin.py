@@ -35,7 +35,7 @@ async def cmd_admin(message: Message, state: FSMContext, session: AsyncSession):
     is_staff = user.role == UserRole.MASUL_XODIM.value
 
     if not (is_super or is_dekan or is_admin or is_staff):
-        await message.answer("❌ Ushbu bo‘lim faqat Aniq va tabiiy fanlar fakulteti mas'ul xodimlari va administratorlar uchun ochiq!")
+        await message.answer("❌ Ushbu bo‘lim faqat Pedagogika fakulteti mas'ul xodimlari va administratorlar uchun ochiq!")
         return
 
     # Close bottom reply keyboard when admin inline panel opens
@@ -68,7 +68,7 @@ async def cmd_admin(message: Message, state: FSMContext, session: AsyncSession):
     role_label = UserRole.label(user.role)
 
     text = (
-        f"⚡️ <b>ANIQ VA TABIIY FANLAR FAKULTETI | ADMIN BOSHQARUV PANELI</b>\n\n"
+        f"⚡️ <b>PEDAGOGIKA FAKULTETI | ADMIN BOSHQARUV PANELI</b>\n\n"
         f"👤 <b>Mas'ul:</b> {user.full_name} ({role_label})\n\n"
         f"<b>Murojaatlar umumiy holati:</b>\n"
         f"• 📥 Yangi: <b>{stats['yangi']} ta</b>\n"
@@ -97,7 +97,7 @@ async def nav_to_admin_menu(callback: CallbackQuery, state: FSMContext, session:
     role_label = UserRole.label(user.role)
 
     text = (
-        f"⚡️ <b>ANIQ VA TABIIY FANLAR FAKULTETI | ADMIN BOSHQARUV PANELI</b>\n\n"
+        f"⚡️ <b>PEDAGOGIKA FAKULTETI | ADMIN BOSHQARUV PANELI</b>\n\n"
         f"👤 <b>Mas'ul:</b> {user.full_name} ({role_label})\n\n"
         f"<b>Murojaatlar umumiy holati:</b>\n"
         f"• 📥 Yangi: <b>{stats['yangi']} ta</b>\n"

@@ -19,7 +19,7 @@ router = Router(name="admin_statistics_router")
 
 def format_stats_text(stats: dict, period_name: str) -> str:
     return (
-        f"📊 <b>ANIQ VA TABIIY FANLAR FAKULTETI | STATISTIKA VA HISOBOTLAR</b>\n"
+        f"📊 <b>PEDAGOGIKA FAKULTETI | STATISTIKA VA HISOBOTLAR</b>\n"
         f"<i>Davr: {period_name}</i>\n\n"
         f"<b>Murojaatlar ko‘rsatkichlari:</b>\n"
         f"• 📋 Jami murojaatlar: <b>{stats['total']} ta</b>\n"
@@ -86,7 +86,7 @@ async def export_excel_report(callback: CallbackQuery, session: AsyncSession, bo
         await bot.send_document(
             chat_id=callback.from_user.id,
             document=doc,
-            caption="📊 <b>Aniq va tabiiy fanlar fakulteti elektron murojaatlarining to‘liq Excel hisoboti.</b>",
+            caption="📊 <b>Pedagogika fakulteti elektron murojaatlarining to‘liq Excel hisoboti.</b>",
             parse_mode="HTML"
         )
     except Exception as e:
@@ -144,7 +144,7 @@ async def execute_broadcast(callback: CallbackQuery, state: FSMContext, session:
         try:
             await bot.send_message(
                 chat_id=tg_id,
-                text=f"📢 <b>ANIQ VA TABIIY FANLAR FAKULTETIDAN BILDIRISHNOMA:</b>\n\n{text}",
+                text=f"📢 <b>PEDAGOGIKA FAKULTETIDAN BILDIRISHNOMA:</b>\n\n{text}",
                 parse_mode="HTML"
             )
             sent_count += 1

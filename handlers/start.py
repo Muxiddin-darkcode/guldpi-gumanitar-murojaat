@@ -20,7 +20,7 @@ router = Router(name="start_router")
 
 WELCOME_TEXT = """Assalomu alaykum!
 
-ANIQ VA TABIIY FANLAR FAKULTETINING elektron murojaatlar Telegram botiga xush kelibsiz!
+PEDAGOGIKA FAKULTETINING elektron murojaatlar Telegram botiga xush kelibsiz!
 
 Ushbu bot orqali Siz fakultet faoliyatiga oid ariza, shikoyat, taklif va savollaringizni yuborishingiz mumkin.
 
@@ -89,12 +89,12 @@ async def process_cancel(message: Message, state: FSMContext, session: AsyncSess
 
 @router.message(F.text.contains("Bog‘lanish") | F.text.contains("Bog'lanish"))
 async def process_contact(message: Message, session: AsyncSession):
-    dept_name = await get_setting(session, "department_name", "Aniq va tabiiy fanlar fakulteti")
+    dept_name = await get_setting(session, "department_name", "Pedagogika fakulteti")
     inst_name = await get_setting(session, "institute_name", "Guliston davlat pedagogika instituti")
-    phone = await get_setting(session, "contact_phone", "+998 97 277-21-78")
-    email = await get_setting(session, "contact_email", "baxtiyor.abdullaev.78@mail.ru")
+    phone = await get_setting(session, "contact_phone", "+998 99 460-05-20")
+    email = await get_setting(session, "contact_email", "norqulovshavkat78@gmail.com")
     hours = await get_setting(session, "reception_hours", "Har kun: 09:00-17:00")
-    dekan = await get_setting(session, "dekan_name", "Baxtiyor Abdullaev")
+    dekan = await get_setting(session, "dekan_name", "Norqulov Shovkat Turg'unboyevich")
 
     text = (
         f"📞 <b>BOG‘LANISH VA ALOQA MA'LUMOTLARI</b>\n\n"
@@ -110,7 +110,7 @@ async def process_contact(message: Message, session: AsyncSession):
 
 @router.message(F.text.contains("Bot haqida"))
 async def process_about(message: Message, session: AsyncSession):
-    dept_name = await get_setting(session, "department_name", "Aniq va tabiiy fanlar fakulteti")
+    dept_name = await get_setting(session, "department_name", "Pedagogika fakulteti")
     text = (
         f"ℹ️ <b>BOT HAQIDA</b>\n\n"
         f"<b>E-MUROJAAT</b> — {dept_name} uchun mo‘ljallangan professional elektron murojaatlar axborot tizimi.\n\n"
@@ -120,7 +120,7 @@ async def process_about(message: Message, session: AsyncSession):
         f"• Ko‘rib chiqish muddatlari va mas'ullar ijrosini nazorat qilish\n"
         f"• Fakultet dekanati bilan to‘g‘ridan-to‘g‘ri elektron yozishmalar\n"
         f"• Shaxsiy ma'lumotlar va maxfiy murojaatlarning qat'iy xavfsizligi\n\n"
-        f"<i>Versiya: 2.0 (2026)\nAniq va tabiiy fanlar fakulteti axborot xizmati.</i>"
+        f"<i>Versiya: 2.0 (2026)\nPedagogika fakulteti axborot xizmati.</i>"
     )
     await message.answer(text, parse_mode="HTML")
 

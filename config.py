@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     APP_ENV: str = Field(default="production", description="Application environment: development / production")
     LOG_LEVEL: str = Field(default="INFO", description="Log level")
     MAX_FILE_SIZE_MB: int = Field(default=20, description="Max allowed file size in MB")
+    APPEAL_PREFIX: str = Field(default="PF", description="Appeal number prefix (PF for Pedagogika fakulteti)")
     ALLOWED_EXTENSIONS: List[str] = Field(
         default=[".pdf", ".doc", ".docx", ".jpg", ".jpeg", ".png", ".mp4", ".xlsx", ".zip", ".txt"],
         description="Allowed file extensions"
